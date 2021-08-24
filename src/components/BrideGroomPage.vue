@@ -1,5 +1,5 @@
 <template>
-  <div class="flex mt-10">
+  <div class="flex my-10">
     <div class="container m-auto">
       <div class="img-container mb-16">
         <img src="/src/assets/images/ilustrasi.png" alt="">
