@@ -4,16 +4,17 @@
   <BrideGroomPage />
   <DetailsPage />
   <MapsPage />
-  <CommentPage />
+  <CommentList />
 </template>
 
 <script setup>
-import FrontPage from './components/FrontPage.vue'
-import QuranVersePage from './components/QuranVersePage.vue'
-import BrideGroomPage from './components/BrideGroomPage.vue'
-import DetailsPage from './components/DetailsPage.vue'
-import MapsPage from './components/MapsPage.vue'
-import CommentPage from './components/CommentPage.vue'
+import FrontPage from './components/page/FrontPage.vue'
+import QuranVersePage from './components/page/QuranVersePage.vue'
+import BrideGroomPage from './components/page/BrideGroomPage.vue'
+import DetailsPage from './components/page/DetailsPage.vue'
+import MapsPage from './components/page/MapsPage.vue'
+import CommentPage from './components/page/CommentPage.vue'
+import CommentList from './components/page/CommentList.vue'
 
 // This starter template is using Vue 3 experimental <script setup> SFCs
 // Check out https://github.com/vuejs/rfcs/blob/master/active-rfcs/0040-script-setup.md
