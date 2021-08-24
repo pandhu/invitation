@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen items-center flex">
+  <div class="items-center flex">
     <div class="container m-auto">
       <div class="flower-container-box m-auto max-w-xs mt-10 mb-10 ">
         <img class="m-auto w-32" src="/src/assets/images/ornament-3.png">
