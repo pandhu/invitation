@@ -4,13 +4,13 @@
       <div class="flower-container-box m-auto max-w-xs mt-10 mb-10 ">
         <img class="m-auto w-32" src="/src/assets/images/ornament-3.png">
       </div>
-      <div class="quran-verse-container px-10">
+      <div class="quran-verse-container px-10 md:px-50">
         <div>
-        <a>
+        <a class="md:text-xl">
           Wahai manusia, bertakwalah kepada Tuhanmu yang telah menciptakan kamu dari diri yang satu (Adam), dan (Allah) menciptakan pasangannya (Hawa), dari (diri)-nya; dan dari keduanya Allah memperkembangbiakkan laki-laki dan perempuan yang banyak. Bertakwalah kepada Allah yang dengan nama-Nya kamu saling meminta dan (jagalah) hubungan kekeluargaan. Sesungguhnya Allah selalu menjaga dan mengawasimu.
         </a>
         </div>
-        <div class="mt-4 font-bold	">
+        <div class="mt-4 font-bold md:text-2xl">
           <a>
             QS. An-Nisa: 1
           </a>

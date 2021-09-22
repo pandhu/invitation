@@ -1,6 +1,6 @@
 <template>
-  <div class="flex outer-container">
-    <div class="container inner-container m-6 rounded-lg">
+  <div class="flex outer-container p-6">
+    <div class="container inner-container my-6 mx-auto rounded-lg">
       <ul>
         <li v-for="comment of comments" v-bind:key="comment">
           <Comment :author="comment.name" :comment="comment.comment"/>

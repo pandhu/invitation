@@ -2,12 +2,12 @@
   <div class="flex my-10">
     <div class="container m-auto">
       <div class="img-container mb-16">
-        <img src="/src/assets/images/ilustrasi.png" alt="">
+        <img src="/src/assets/images/ilustrasi.png" alt="" class="md:w-1/2 md:mx-auto">
       </div>
       <div class="name-container">
         <div class="bride-container">
           <div class="bride-name-container p-3">
-            <a class="text-3xl">Nilamsari Putri Utami</a>
+            <a class="text-3xl md:text-5xl">Nilamsari Putri Utami</a>
           </div>
           <div class="bride-parents-name-container">
             <a>Putri pertama dari</a><br/>
@@ -19,7 +19,7 @@
         </div>
         <div class="groom-container">
           <div class="groom-name-container mb-3">
-            <a class="text-3xl">Pandhu Hutomo Aditya</a>
+            <a class="text-3xl md:text-5xl">Pandhu Hutomo Aditya</a>
           </div>
           <div class="groom-parents-name-container">
             <a>Putra pertama dari</a><br/>

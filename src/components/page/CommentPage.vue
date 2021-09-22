@@ -4,9 +4,9 @@
       <div class="title-container mb-10">
         <a class="text-xl">Ucapan & Doa untuk Mempelai</a>
       </div>
-      <div class="form-container p-6">
+      <div class="form-container p-6 md:flex md:justify-center">
         <form class="w-full max-w-lg">
-          <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="flex flex-wrap mx-auto mb-6">
             <div class="w-full px-3 mb-6">
               <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Nama">
             </div>
@@ -26,11 +26,6 @@
 <script setup>
 import { defineProps, reactive } from 'vue'
 
-defineProps({
-  msg: String
-})
-
-const state = reactive({ count: 0 })
 </script>
 
 <style scoped>

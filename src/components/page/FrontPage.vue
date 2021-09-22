@@ -1,10 +1,10 @@
 <template>
-  <div class="h-screen flex" style="background-image: url('/src/assets/images/background-mobile.png')">
+  <div class="h-screen flex md:bg-cover" :style="{ backgroundImage: backgroundImage.src && 'url(' + backgroundImage.src + ')' }">
     <div class="front-text-box m-auto">
-      <div class="tex-box-upper w-full text-base mb-8">
+      <div class="tex-box-upper w-full text-base mb-8 md:text-2xl">
         UNDANGAN PERNIKAHAN
       </div>
-      <div class="text-box-middle w-full text-5xl font-normal">
+      <div class="text-box-middle w-full text-5xl md:text-7xl font-normal">
         <div class="name-bride mb-2">
           Nilam
         </div>
@@ -15,7 +15,7 @@
           Pandhu
         </div>
       </div>
-      <div class="tex-box-lower w-full text-base mt-8">
+      <div class="tex-box-lower w-full text-base mt-8 md:text-2xl">
         09 . 10 . 2021
       </div>
     </div>
@@ -25,12 +25,25 @@
 <script setup>
 import { defineProps, reactive } from 'vue'
 
-defineProps({
-  msg: String
+const backgroundImage = reactive({
+  src: '/src/assets/images/background-desktop.png'
 })
-
-const state = reactive({ count: 0 })
 </script>
+
+<script>
+
+export default {
+  beforeCreate() {
+    console.log("ehe")
+    let screenWidth = screen.width
+    console.log(screenWidth)
+    if(screenWidth < 1080){
+      this.backgroundImage.src = '/src/assets/images/background-mobile.png'
+    }
+  }
+}
+</script>
+
 
 <style scoped>
 @font-face {
