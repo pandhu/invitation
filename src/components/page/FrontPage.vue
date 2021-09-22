@@ -34,9 +34,6 @@ const backgroundImage = reactive({
 
 export default {
   beforeCreate() {
-    console.log("ehe")
-    let screenWidth = screen.width
-    console.log(screenWidth)
     if(screenWidth < 1080){
       this.backgroundImage.src = '/src/assets/images/background-mobile.png'
     }
