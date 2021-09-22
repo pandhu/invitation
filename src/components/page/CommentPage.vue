@@ -14,6 +14,9 @@
               <textarea class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white h-36" id="grid-last-name" type="text" placeholder="Pesan"></textarea>
             </div>
           </div>
+          <button class="px-6 py-2 text-white rounded-full" type="button">
+            Kirim Pesan
+          </button>
         </form>
       </div>
     </div>
@@ -43,5 +46,10 @@ const state = reactive({ count: 0 })
 a {
   font-family: "Open Sans";
   color: #69765C  ;
+}
+
+button {
+  background-color: #69765C;
+  font-weight: bold;
 }
 </style>

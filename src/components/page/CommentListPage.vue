@@ -1,33 +1,35 @@
 <template>
-  <div class="flex my-10">
-    <div class="container m-auto">
-      <div class="title-container mb-10">
-        <a class="text-xl">Ucapan & Doa untuk Mempelai</a>
-      </div>
-      <div class="form-container p-6">
-        <form class="w-full max-w-lg">
-          <div class="flex flex-wrap -mx-3 mb-6">
-            <div class="w-full px-3 mb-6">
-              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Nama">
-            </div>
-            <div class="w-full px-3">
-              <textarea class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white h-36" id="grid-last-name" type="text" placeholder="Pesan"></textarea>
-            </div>
-          </div>
-        </form>
-      </div>
+  <div class="flex outer-container">
+    <div class="container inner-container m-6 rounded-lg">
+      <ul>
+        <li v-for="comment of comments" v-bind:key="comment">
+          <Comment :author="comment.name" :comment="comment.comment"/>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script setup>
 import { defineProps, reactive } from 'vue'
-
-defineProps({
-  msg: String
-})
+import Comment from '../Comment.vue'
 
 const state = reactive({ count: 0 })
+const comments = [
+  {
+    "name": "Lee Ikjoon",
+    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget neque auctor, facilisis enim in, tristique elit. Phasellus diam erat, bibendum eu dui rhoncus, condimentum venenatis nulla. Nulla a justo libero. Maecenas eget bibendum felis, eu lobortis ex."
+  },
+  {
+    "name": "Kim Junwan",
+    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget neque auctor, facilisis enim in, tristique elit. Phasellus diam erat, bibendum eu dui rhoncus, condimentum venenatis nulla. Nulla a justo libero. Maecenas eget bibendum felis, eu lobortis ex."
+  },
+  {
+    "name": "Seok Hyeong",
+    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget neque auctor, facilisis enim in, tristique elit. Phasellus diam erat, bibendum eu dui rhoncus, condimentum venenatis nulla. Nulla a justo libero. Maecenas eget bibendum felis, eu lobortis ex."
+  }
+]
+
 </script>
 
 <style scoped>
@@ -43,5 +45,13 @@ const state = reactive({ count: 0 })
 a {
   font-family: "Open Sans";
   color: #69765C  ;
+}
+
+.outer-container {
+  background-color: #f8f8f8;
+}
+
+.inner-container {
+  background-color: #fff;
 }
 </style>

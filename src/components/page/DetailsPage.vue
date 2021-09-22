@@ -6,7 +6,7 @@
           <img src="/src/assets/images/ornament-4-left.png" alt="" class="object-contain h-28">
         </div>
         <div class="basmallah-container flex-grow ">
-          <a>placeholder basmallah</a>
+          <img src="/src/assets/images/basmallah.png" alt="" class="object-contain h-28">
         </div>
         <div class="ornament-right">
           <img src="/src/assets/images/ornament-4-right.png" alt="" class="object-contain h-28">
@@ -27,10 +27,6 @@
         <div class="akad-time-container flex-1">
           <a class="font-bold	">Akad Nikah</a><br>
           <a>09.00 WIB</a>
-        </div>
-        <div class="resepsi-time-container flex-1">
-          <a class="font-bold	">Resepsi</a><br>
-          <a>11.00-13.00 WIB</a>
         </div>
       </div>
 
