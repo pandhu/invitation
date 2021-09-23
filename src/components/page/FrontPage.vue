@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen flex md:bg-cover" :style="{ backgroundImage: backgroundImage.src && 'url(' + backgroundImage.src + ')' }">
+  <div class="h-screen flex md:bg-cover" :style="{ backgroundImage: backgroundImage && 'url(' + backgroundImage + ')' }">
     <div class="front-text-box m-auto">
       <div class="tex-box-upper w-full text-base mb-8 md:text-2xl">
         UNDANGAN PERNIKAHAN
@@ -25,19 +25,16 @@
 <script setup>
 import { defineProps, reactive } from 'vue'
 
-const backgroundImage = reactive({
-  src: '/src/assets/images/background-desktop.png'
-})
+const backgroundImage = isMobile() ? '/src/assets/images/background-mobile.png' : '/src/assets/images/background-mobile.png'
 </script>
 
 <script>
-
-export default {
-  beforeCreate() {
-    if(screenWidth < 1080){
-      this.backgroundImage.src = '/src/assets/images/background-mobile.png'
-    }
-  }
+function isMobile() {
+  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+     return true
+   } else {
+     return false
+   }
 }
 </script>
 
