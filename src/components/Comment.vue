@@ -1,7 +1,7 @@
 <template>
-  <div class="my-10 container px-5 text-left">
-      <div class="author-container mb-2"><a class="font-bold">{{ author }}</a></div>
-      <div class="comment-container"><a>{{ comment }}</a></div>
+  <div class="py-3 container px-3 text-left shadow-md rounded mb-3 md:mb-5">
+    <div class="author-container mb-2"><a class="font-bold">{{ author }}</a></div>
+    <div class="comment-container"><a>{{ comment }}</a></div>
   </div>
 </template>
 
@@ -26,4 +26,7 @@ a {
   color: #69765C  ;
 }
 
+.container {
+  background-color: #f8f8f8;
+}
 </style>

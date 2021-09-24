@@ -1,5 +1,5 @@
 <template>
-  <div class="items-center flex mb-5">
+  <div class="section items-center flex mb-5">
     <div class="container m-auto">
       <div class="flower-container-box m-auto max-w-xs mt-10 mb-5 ">
         <img class="m-auto w-32" src="/src/assets/images/ornament-1.png">

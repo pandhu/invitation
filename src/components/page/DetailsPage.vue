@@ -1,39 +1,33 @@
 <template>
-  <div class="flex h-screen md:h-full outer-container md:pb-10">
+  <div class="section flex min-h-screen	md:h-full md:min-h-screen outer-container pb-10 md:my-20 relative">
     <div class="container md:max-w-none">
-      <div class="top-container flex mt-5">
-        <div class="ornament-left">
-          <img src="/src/assets/images/ornament-4-left.png" alt="" class="object-contain h-28">
-        </div>
-        <div class="basmallah-container flex-grow">
-          <img src="/src/assets/images/basmallah.png" alt="" class="object-contain h-28 md:h-16 md:mx-auto">
-        </div>
-        <div class="ornament-right">
-          <img src="/src/assets/images/ornament-4-right.png" alt="" class="object-contain h-28">
-        </div>
-      </div>
-      <div class="content-container md:w-1/2 mx-auto">
-        <div class="greeting-container my-8 px-10">
-          <a class="italic">Assalamualaikum Warahmatullahi Wabarakatuh</a>
-        </div>
-        <div class="greeting-container px-10">
-          <a>Dengan memohon ridho dan rahmat Allah SWT, kami bermaksud menyelenggarakan Syukuran Pernikahan putra putri kami yang insyaAllah akan diselenggarakan pada:</a>
-        </div>
-
-        <div class="date-container my-10">
-          <a class="p-3"> Sabtu, 9 Oktober 2021</a>
-        </div>
-
-        <div class="time-container flex divide-x divide-white-500">
-          <div class="akad-time-container flex-1">
-            <a class="font-bold	">Akad Nikah</a><br>
-            <a>09.00 WIB</a>
+        <div class="ornament-left absolute top-5 md:top-10 right-0">
+            <img src="/src/assets/images/ornament-details-top.png" alt="" class="object-contain h-20 md:h-60">
           </div>
-        </div>
+          <div class="ornament-right absolute bottom-5 md:bottom-10 left-0">
+            <img src="/src/assets/images/ornament-details-bottom.png" alt="" class="object-contain h-20 md:h-60">
+          </div>
+      <div class="content-container md:w-1/2 mx-auto flex h-full items-center justify-center static  md:text-3xl">
+        <div class="inner-container">
+          <div class="greeting-container my-8 px-10 md:my-16 md:px-16">
+            <a class="">We kindly request the honor of your presence and duas at our online</a>
+          </div>
+          <div class="akad-nikah border-b-2"><a class="md:text-6xl">AKAD NIKAH</a></div>
+          <div class="date my-10 md:my-8">
+            <p class="p-3 justify-center">Saturday, 9th October 2021</p>
+            <p class="p-3 justify-center">09.00</p>
+          </div>
+          <div class="zoom-container">
+            <a href="https://bit.ly/AkadNilamPandhu" class="flex items-center justify-center"><img src="/src/assets/images/zoom-icon.png" alt="" class="mr-3"> <span class="inline-block align-middle">bit.ly/AkadNilamPandhu</span></a>
+          </div>
 
-        <div class="place-container px-10 mt-10">
-          <a class="font-bold">Pondok Laras</a><br>
-          <a>Jl. Akses UI No.2 Tugu, Kec. Cimanggis, Kota Depok, Jawa Barat</a>
+          <div class="calendar-button my-16">
+            <a href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NzRsYWluZWJpNWM1YmtnMjlyams2Y2pkbTAgYWRpdHlhLnBhbmRodUBt&tmsrc=aditya.pandhu%40gmail.com" target="_blank" class="p-3"> ADD TO YOUR CALENDAR</a>
+          </div>
+
+          <div class="px-10 mt-10 md:px-16 md:mt-16">
+            <a>We wish we could bring all of the people we love and care about together to celebrate our wedding, but with current situation, our wedding will include only immediate family members. We hope you will join us via Zoom for this special, happy occasion! </a>
+          </div>
         </div>
       </div>
     </div>
@@ -65,7 +59,7 @@ const state = reactive({ count: 0 })
   background-color: #69765C  ;
 }
 
-a {
+a, p {
   color: white;
 }
 
@@ -73,11 +67,20 @@ a {
   font-family: "Open Sans";
 }
 
-.date-container > a {
-  font-family: "Trajan Pro";
+.calendar-button > a {
+  font-family: "Open Sans";
   color:#69765C;
+  font-weight: bold;
   background-color: white;
 }
 
+.akad-nikah > a {
+  font-family: "Trajan Pro";
+}
+
+.date > p {
+  font-family: "Open Sans";
+  font-weight: bold;
+}
 
 </style>

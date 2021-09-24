@@ -1,16 +1,19 @@
 <template>
-  <div class="items-center flex">
+  <div class="section min-h-screen items-center flex">
     <div class="container m-auto">
-      <div class="flower-container-box m-auto max-w-xs mt-10 mb-10 ">
+      <div class="flower-container-box m-auto max-w-xs mt-10 mb-10 animate__animated animate__fadeIn wow">
         <img class="m-auto w-32" src="/src/assets/images/ornament-3.png">
       </div>
       <div class="quran-verse-container px-10 md:px-50">
         <div>
-        <a class="md:text-xl">
-          Wahai manusia, bertakwalah kepada Tuhanmu yang telah menciptakan kamu dari diri yang satu (Adam), dan (Allah) menciptakan pasangannya (Hawa), dari (diri)-nya; dan dari keduanya Allah memperkembangbiakkan laki-laki dan perempuan yang banyak. Bertakwalah kepada Allah yang dengan nama-Nya kamu saling meminta dan (jagalah) hubungan kekeluargaan. Sesungguhnya Allah selalu menjaga dan mengawasimu.
+          <img src="/src/assets/images/an-nisa-arabic.png" alt="" class="mx-auto animate__animated animate__fadeIn animate__slow wow">
+        </div>
+        <div>
+        <a class="md:text-3xl animate__animated animate__fadeIn animate__slow wow">
+          “O humanity! Be mindful of your Lord Who created you from a single soul, and from it He created its mate, and through both He spread countless men and women. And be mindful of Allah—in Whose Name you appeal to one another—and ˹honour˺ family ties. Surely Allah is ever Watchful over you.”
         </a>
         </div>
-        <div class="mt-4 font-bold md:text-2xl">
+        <div class="mt-4 font-bold md:text-2xl animate__animated animate__fadeIn animate__slower wow">
           <a>
             QS. An-Nisa: 1
           </a>
