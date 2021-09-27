@@ -1,19 +1,19 @@
 <template>
   <div class="section min-h-screen items-center flex">
     <div class="container m-auto">
-      <div class="flower-container-box m-auto max-w-xs mt-10 mb-10 animate__animated animate__fadeIn wow">
+      <div class="flower-container-box m-auto max-w-xs mt-10 mb-10">
         <img class="m-auto w-32" src="/src/assets/images/ornament-3.png">
       </div>
       <div class="quran-verse-container px-10 md:px-50">
         <div>
-          <img src="/src/assets/images/an-nisa-arabic.png" alt="" class="mx-auto animate__animated animate__fadeIn animate__slow wow">
+          <img src="/src/assets/images/an-nisa-arabic.png" alt="" class="mx-auto">
         </div>
         <div>
-        <a class="md:text-3xl animate__animated animate__fadeIn animate__slow wow">
+        <a class="text-sm md:text-3xl">
           “O humanity! Be mindful of your Lord Who created you from a single soul, and from it He created its mate, and through both He spread countless men and women. And be mindful of Allah—in Whose Name you appeal to one another—and ˹honour˺ family ties. Surely Allah is ever Watchful over you.”
         </a>
         </div>
-        <div class="mt-4 font-bold md:text-2xl animate__animated animate__fadeIn animate__slower wow">
+        <div class="mt-4 font-bold md:text-2xl ">
           <a>
             QS. An-Nisa: 1
           </a>

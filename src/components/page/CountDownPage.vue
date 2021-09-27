@@ -2,23 +2,19 @@
   <div class="section flex py-10">
     <div class="container m-auto">
       <div class="title-container mb-10">
-        <a class="text-2xl">COUNTING DOWN TO THE BIG DAY</a>
+        <a class="text-md md:px-10 md:text-2xl">COUNTING DOWN TO THE BIG DAY</a>
       </div>
-      <div class="maps-container p-3">
-        <iframe class="w-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.2996005293608!2d106.8513650158951!3d-6.355249763945358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec5cb41ed3df%3A0xdfd6d8d2eb933747!2sRumah%20Makan%20Lesehan%20Pondok%20Laras!5e0!3m2!1sen!2sid!4v1629814565739!5m2!1sen!2sid" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
+      <Countdown :datetime="datetime"/>
     </div>
   </div>
 </template>
 
 <script setup>
 import { defineProps, reactive } from 'vue'
+import Countdown from '../Countdown.vue'
 
-defineProps({
-  msg: String
-})
+const datetime = 'Oct 9, 2021 09:00:00'
 
-const state = reactive({ count: 0 })
 </script>
 
 <style scoped>

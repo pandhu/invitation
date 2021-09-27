@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "vue": "^3.0.5",
+    "vue-tailwind": "^2.4.2",
     "wow.js": "^1.2.2"
   },
   "devDependencies": {

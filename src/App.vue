@@ -29,12 +29,16 @@ export default {
       inMove: false,
       activeSection: 0,
       offsets: [],
-      touchStartY: 0
+      touchStartY: 0,
+      lastScrollTop: 0,
+      isMusicPlay: false,
     }
   },
   methods: {
     calculateSectionOffsets() {
+      this.offsets = []
       let sections = document.getElementsByClassName('section');
+
       let length = sections.length;
 
       for(let i = 0; i < length; i++) {
@@ -67,7 +71,7 @@ export default {
       this.inMove = true;
       this.activeSection--;
 
-      if(this.activeSection < 0) this.activeSection = this.offsets.length - 1;
+      if(this.activeSection < 0) this.activeSection = 0;
 
       this.scrollToSection(this.activeSection, true);
     },
@@ -75,7 +79,7 @@ export default {
       this.inMove = true;
       this.activeSection++;
 
-      if(this.activeSection > this.offsets.length - 1) this.activeSection = 0;
+      if(this.activeSection > this.offsets.length - 1) this.activeSection = this.offsets.length - 1;
 
       this.scrollToSection(this.activeSection, true);
     },
@@ -84,21 +88,25 @@ export default {
 
       this.activeSection = id;
       this.inMove = true;
+
       document.getElementsByClassName('section')[id].scrollIntoView({behavior: 'smooth'});
 
       setTimeout(() => {
         this.inMove = false;
+        if(!this.isMusicPlay) {
+          const x = document.getElementById("audio");
+          x.play()
+        }
       }, 400);
 
     },
     touchStart(e) {
-      e.preventDefault();
-
+      if(!findElementByClass(e.path, 'dont-prevent')) e.preventDefault();
       this.touchStartY = e.touches[0].clientY;
     },
     touchMove(e) {
       if(this.inMove) return false;
-      e.preventDefault();
+      if(!findElementByClass(e.path, 'dont-prevent')) e.preventDefault();
 
       const currentY = e.touches[0].clientY;
 
@@ -110,9 +118,20 @@ export default {
 
       this.touchStartY = 0;
       return false;
+    },
+    scrollHandler(e){
+      var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+      if (st > this.lastScrollTop){
+          this.moveDown();
+      } else {
+          this.moveUp();
+      }
+      this.lastScrollTop = st <= 0 ? 0 : st;
     }
   },
   mounted(){
+    const x = document.getElementById("audio");
+    x.pause()
     this.calculateSectionOffsets();
   },
   created() {
@@ -129,6 +148,13 @@ export default {
     window.removeEventListener('touchstart', this.touchStart); // mobile devices
     window.removeEventListener('touchmove', this.touchMove); // mobile devices
   }
+}
+
+function findElementByClass(elements, className){
+  const found = elements.find(element => {
+    if(typeof element.className !== 'undefined' && element.className.includes(className)) return true
+  })
+  return found
 }
 </script>
 

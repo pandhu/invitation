@@ -1,27 +1,27 @@
 <template>
-  <div class="section flex my-10">
+  <div class="flex my-10 py-10" :class="section">
     <div class="container m-auto">
       <div class="title-container mb-10">
-        <a class="text-xl">Ucapan & Doa untuk Mempelai</a>
+        <a class="text-xl">Send your duas and wishes</a>
       </div>
       <div v-if="submitted" class="submitted mx-5 rounded p-5">
-        <p class="text-white">Terimakasih atas Doa & Ucapannya</p>
+        <p class="text-white">Thanks for your duas and wishes</p>
       </div>
       <div v-if="failedSubmit" class="bg-red-300 mx-5 rounded p-5">
-        <p class="text-white">Nama dan Pesan tidak boleh kosong</p>
+        <p class="text-white">Name and Message can't be blank</p>
       </div>
       <div class="form-container p-6 md:flex md:justify-center">
-        <form class="w-full max-w-lg">
+        <form class="w-full max-w-lg dont-prevent">
           <div class="flex flex-wrap mx-auto mb-6">
             <div class="w-full px-3 mb-6">
-              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="Nama" v-model="author">
+              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="Name" v-model="author">
             </div>
             <div class="w-full px-3">
-              <textarea class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white h-36" type="text" placeholder="Pesan" v-model="comment"></textarea>
+              <textarea class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white h-36" type="text" placeholder="Message" v-model="comment"></textarea>
             </div>
           </div>
           <button class="px-6 py-2 text-white rounded-full" type="button" @click="submit">
-            Kirim Pesan
+            Send
           </button>
           <div v-if="submiting" class="m-auto">
             <img src="/src/assets/images/loading-bar.gif" alt="" class="object-contain m-auto">
@@ -34,6 +34,7 @@
 
 <script setup>
 import { defineProps, reactive } from 'vue'
+const section = isMobile() ? 'section' : ''
 
 </script>
 
@@ -76,6 +77,14 @@ export default {
         })
     }
   }
+}
+
+function isMobile() {
+  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+     return true
+   } else {
+     return false
+   }
 }
 </script>
 

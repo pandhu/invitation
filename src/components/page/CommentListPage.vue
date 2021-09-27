@@ -1,14 +1,14 @@
 <template>
-  <div class="section flex outer-container p-6">
+  <div class="flex outer-container p-6">
     <div class="container inner-container my-6 mx-auto rounded-lg p-3 md:p-5">
       <ul>
-        <li v-for="comment of comments" v-bind:key="comment">
+        <li v-for="comment of comments" v-bind:key="comment" class="section">
           <Comment :author="comment.author" :comment="comment.comment"/>
         </li>
       </ul>
       <div>
-        <button v-if="notViewAll" class="px-6 py-2 text-white rounded-full mb-5 mt-5" type="button" @click="viewAll">
-          Lihat Semua
+        <button v-if="notViewAll" class="px-6 py-2 text-white rounded-full mb-5 mt-5 dont-prevent section" type="button" @click="viewAll">
+          Show more comments
         </button>
       </div>
       <div v-if="loading" class="m-auto">
@@ -35,10 +35,16 @@ export default {
       notViewAll: true
     }
   },
-  mounted() {
+  updated(){
+    this.$parent.calculateSectionOffsets()
+  },
+  beforeCreate() {
     fetch('https://v1.nocodeapi.com/pandhuha/google_sheets/OVTrVJpdFULXGRwl?tabId=Displayed')
       .then((res) => res.json())
-      .then(data => this.comments = (data.data.slice(-3)))
+      .then(data => {
+        const reversed = data.data.reverse()
+        this.comments = (reversed.slice(0,3))
+      })
       .catch(err => console.log(err))
   },
   methods: {
@@ -47,7 +53,7 @@ export default {
       fetch('https://v1.nocodeapi.com/pandhuha/google_sheets/OVTrVJpdFULXGRwl?tabId=Displayed')
         .then((res) => res.json())
         .then(data => {
-          this.comments = (data.data)
+          this.comments = (data.data.reverse())
           this.loading = false
           this.notViewAll = false
         })
@@ -82,7 +88,10 @@ a {
 }
 
 button {
-  background-color: #69765C;
+  background-color: #fff;
+  color: #69765C;
+  border-color: #69765C;
+  border-width: 1pt;
   font-weight: bold;
 }
 </style>

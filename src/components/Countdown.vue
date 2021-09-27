@@ -1,6 +1,23 @@
 <template>
-  <div class="py-3 container px-3 md:text-2xl">
-    <div v-if="!isFinish"><p>{{days}} Hari {{hours}} Jam {{minutes}} Menit {{seconds}} Detik</p></div>
+  <div class="py-3 container px-3">
+    <div v-if="!isFinish" class="flex justify-center md:flex-row flex-col">
+        <div class="border-2 mx-3 p-5 md:p-10 md:mx-5 mb-5">
+          <p class="md:text-6xl text-xl">{{days}}</p>
+          <p>days</p>
+        </div>
+        <div class="border-2 mx-3 p-5 md:p-10 md:mx-5 mb-5">
+          <p class="md:text-6xl text-xl">{{hours}}</p>
+          <p>hours</p>
+        </div>
+        <div class="border-2 mx-3 p-5 md:p-10 md:mx-5 mb-5">
+          <p class="md:text-6xl text-xl">{{minutes}}</p>
+          <p>minutes</p>
+        </div>
+        <div class="border-2 mx-3 p-5 md:p-10 md:mx-5 mb-5">
+          <p class="md:text-6xl text-xl">{{seconds}}</p>
+          <p>seconds</p>
+        </div>
+    </div>
     <div v-if="isFinish"><p>We are Married</p></div>
   </div>
 </template>
@@ -27,15 +44,16 @@ export default {
   },
   methods: {
     setCountDown() {
+
       var now = new Date().getTime();
       var countDownDate = new Date(this.datetime).getTime();
       var distance = countDownDate - now;
 
       // Time calculations for days, hours, minutes and seconds
-      this.days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      this.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      this.seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      this.days = pad(Math.floor(distance / (1000 * 60 * 60 * 24)), 2);
+      this.hours = pad(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)), 2);
+      this.minutes = pad(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)), 2);
+      this.seconds = pad(Math.floor((distance % (1000 * 60)) / 1000), 2);
 
       // If the count down is finished, write some text
       if (distance < 0) {
@@ -48,16 +66,21 @@ export default {
       var distance = countDownDate - now;
 
       // Time calculations for days, hours, minutes and seconds
-      this.days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      this.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      this.seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      this.days = pad(Math.floor(distance / (1000 * 60 * 60 * 24)), 2);
+      this.hours = pad(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)), 2);
+      this.minutes = pad(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)), 2);
+      this.seconds = pad(Math.floor((distance % (1000 * 60)) / 1000), 2);
     }
   },
   created() {
     this.initialize()
     setInterval(this.setCountDown, 1000)
   }
+}
+
+function pad (str, max) {
+  str = str.toString();
+  return str.length < max ? pad("0" + str, max) : str;
 }
 </script>
 
