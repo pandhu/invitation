@@ -1,5 +1,5 @@
 <template>
-  <div class="py-3 container px-3 text-left shadow-md rounded mb-3 md:mb-5">
+  <div class="py-3 container px-3 text-left shadow-md rounded mb-3 lg:mb-5 lg:text-lg">
     <div class="author-container mb-2"><a class="font-bold">{{ author }}</a></div>
     <div class="comment-container"><a>{{ comment }}</a></div>
   </div>

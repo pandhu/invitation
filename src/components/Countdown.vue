@@ -1,21 +1,21 @@
 <template>
   <div class="py-3 container px-3">
-    <div v-if="!isFinish" class="flex justify-center md:flex-row flex-col">
-        <div class="border-2 mx-3 p-5 md:p-10 md:mx-5 mb-5">
-          <p class="md:text-6xl text-xl">{{days}}</p>
-          <p>days</p>
+    <div v-if="!isFinish" class="flex justify-center lg:flex-row flex-row">
+        <div class="border-2 mx-1 p-5 lg:p-10 lg:mx-5 mb-5">
+          <p class="lg:text-6xl text-2xl">{{days}}</p>
+          <p class="text-sm">days</p>
         </div>
-        <div class="border-2 mx-3 p-5 md:p-10 md:mx-5 mb-5">
-          <p class="md:text-6xl text-xl">{{hours}}</p>
-          <p>hours</p>
+        <div class="border-2 mx-1 p-5 lg:p-10 lg:mx-5 mb-5">
+          <p class="lg:text-6xl text-2xl">{{hours}}</p>
+          <p class="text-sm">hrs</p>
         </div>
-        <div class="border-2 mx-3 p-5 md:p-10 md:mx-5 mb-5">
-          <p class="md:text-6xl text-xl">{{minutes}}</p>
-          <p>minutes</p>
+        <div class="border-2 mx-1 p-5 lg:p-10 lg:mx-5 mb-5">
+          <p class="lg:text-6xl text-2xl">{{minutes}}</p>
+          <p class="text-sm">mins</p>
         </div>
-        <div class="border-2 mx-3 p-5 md:p-10 md:mx-5 mb-5">
-          <p class="md:text-6xl text-xl">{{seconds}}</p>
-          <p>seconds</p>
+        <div class="border-2 mx-1 p-5 lg:p-10 lg:mx-5 mb-5">
+          <p class="lg:text-6xl text-2xl">{{seconds}}</p>
+          <p class="text-sm">secs</p>
         </div>
     </div>
     <div v-if="isFinish"><p>We are Married</p></div>

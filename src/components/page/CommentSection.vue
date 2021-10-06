@@ -1,7 +1,7 @@
 <template>
-  <div class="flex my-10 py-10" :class="section">
+  <div class="flex lg:mt-10" :class="section">
     <div class="container m-auto">
-      <div class="title-container mb-10">
+      <div class="title-container mb-3 lg:mb-10">
         <a class="text-xl">Send your duas and wishes</a>
       </div>
       <div v-if="submitted" class="submitted mx-5 rounded p-5">
@@ -10,7 +10,7 @@
       <div v-if="failedSubmit" class="bg-red-300 mx-5 rounded p-5">
         <p class="text-white">Name and Message can't be blank</p>
       </div>
-      <div class="form-container p-6 md:flex md:justify-center">
+      <div class="form-container p-6 lg:flex lg:justify-center">
         <form class="w-full max-w-lg dont-prevent">
           <div class="flex flex-wrap mx-auto mb-6">
             <div class="w-full px-3 mb-6">

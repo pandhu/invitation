@@ -1,6 +1,6 @@
 <template>
   <div class="flex outer-container p-6">
-    <div class="container inner-container my-6 mx-auto rounded-lg p-3 md:p-5">
+    <div id="comments-box" class="container inner-container my-6 mx-auto rounded-lg p-3 lg:p-5 max-h-screen overflow-auto">
       <ul>
         <li v-for="comment of comments" v-bind:key="comment" class="section">
           <Comment :author="comment.author" :comment="comment.comment"/>
@@ -32,11 +32,12 @@ export default {
 
       ],
       loading: false,
-      notViewAll: true
+      notViewAll: true,
     }
   },
+  mounted() {
+  },
   updated(){
-    this.$parent.calculateSectionOffsets()
   },
   beforeCreate() {
     fetch('https://v1.nocodeapi.com/pandhuha/google_sheets/OVTrVJpdFULXGRwl?tabId=Displayed')

@@ -11,7 +11,7 @@
     </div>
   </div>
   <div>
-         <audio id="audio" autoplay class="m-auto">
+         <audio id="audio" controls autoplay class="m-auto">
           <source src="/src/assets/bgm/euphoria-piano.mp3" type="audio/mpeg">
         </audio>
       </div>

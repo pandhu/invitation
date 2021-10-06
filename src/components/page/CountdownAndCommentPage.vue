@@ -1,17 +1,16 @@
 <template>
-  <div class="section flex py-10">
-    <div class="container m-auto">
-      <div class="title-container mb-10">
-        <a class="text-md md:px-10 md:text-2xl">COUNTING DOWN TO THE BIG DAY</a>
-      </div>
-      <Countdown :datetime="datetime"/>
+  <div class="section min-h-screen items-center flex py-10">
+    <div class="flex-row h-full m-auto">
+      <CountdownSection />
+      <CommentSection />
     </div>
   </div>
 </template>
 
 <script setup>
 import { defineProps, reactive } from 'vue'
-import Countdown from '../Countdown.vue'
+import CountdownSection from './CountdownSection.vue'
+import CommentSection from './CommentSection.vue'
 
 const datetime = 'Oct 9, 2021 09:00:00'
 
