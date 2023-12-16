@@ -23,7 +23,7 @@
           </div>
           <div class="groom-parents-name-container">
             <a>Putra pertama dari</a><br/>
-            <a>Bpk. Rohadi & Ibu Endang Winarsih</a>
+            <a>Bpk. Rohadi & Ibu Endang</a>
           </div>
         </div>
       </div>
